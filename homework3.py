@@ -82,13 +82,9 @@ class App:
                 rv = np.array([f[0] - b[0], f[1] - b[1]])
                 sp = np.dot(nv, rv)
                 cf = sp / ((f[0] - b[0]) ** 2 + (f[1] - b[1]) ** 2) ** 0.5
-                fi = round(math.acos(cf), 1)
-                fi = fi * 180 / 3.14
-                fi = round(fi, 1)
-                xr = (b[0] + f[0] - 2 * zx) / 200
-                xr = round(xr, 1)
-                yr = (b[1] + f[1] - 2 * zy) / 200
-                yr = round(yr, 1)
+                fi = round(math.acos(cf) * 180 / 3.14, 1)
+                xr = round((b[0] + f[0] - 2 * zx) / 200, 1)
+                yr = round((b[1] + f[1] - 2 * zy) / 200, 1)
                 if f[0] < b[0]:
                     fi = -fi
                 self.canvas.create_text((b[0] + f[0]) / 2, (b[1] + f[1]) / 2,
