@@ -108,7 +108,7 @@ class App:
             else:
                 return ret, cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), None, None
         else:
-            return ret, None
+            return ret, None, None, None
 
 
 App('2.mp4')
